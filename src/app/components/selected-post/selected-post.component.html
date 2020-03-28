@@ -1,0 +1,18 @@
+
+<div class="row h-100">
+  <div class="col-8 h-100 flex img-hover-zoom padd">
+    <img [src]="background" class="image">
+</div>
+  <div class="col-4 h-100 text-center text-white" [ngStyle]="{'background-color':color}">
+    <div class="row h-50" routerLink="/selected-work">
+    <div class="col-12 middle text-center">
+     <h2 class="margin">Works</h2>
+    </div>
+    </div>
+      <div class="row h-50" routerLink="/update">
+        <div class="col-12 middle text-center">
+          <h2 class="margin"  style="padding-bottom: 5%">Updates</h2>
+        </div>
+    </div>
+  </div>
+</div>

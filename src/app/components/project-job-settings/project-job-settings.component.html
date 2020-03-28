@@ -1,0 +1,81 @@
+<div class="container-fluid h-100">
+
+  <div class="row h-100">
+
+    <div class="col-md-1 col-1 h-100 cubes">
+
+    </div>
+    <div class="col-md-10 col-10 h-100 text-center">
+    <div class="row littlemargin font-weight-bold">
+      <div class="col-md-2 col-2">
+id
+
+
+      </div>
+
+
+
+
+      <div class="col-md-2 col-2">
+        Image
+      </div>
+      <div class="col-md-2 col-2">
+        Role
+      </div>
+      <div class="col-md-2 col-2">
+       Worker
+      </div>
+      <div class="col-md-2 col-2">
+        Modify
+      </div>
+      <div class="col-md-1 col-1">
+      Delete
+      </div>
+      <div class="col-md-1 col-1">
+        <button class="btn cubes text-white" routerLink="/project/{{project.projectName}}">Back</button>
+      </div>
+
+    </div>
+      <div class="list">
+
+        <div class="row text-center littlemargin"  *ngFor="let item of roles | paginate: { itemsPerPage: 10, currentPage: p };let i=index">
+          <div class="col-md-2 col-2">
+            {{item.id}}
+          </div>
+          <div class="col-md-2 col-2">
+           <img class="contain" src="{{item.roleImage}}">
+          </div>
+          <div class="col-md-2 col-2">
+            {{item.role}}
+          </div>
+          <div class="col-md-2 col-2">
+            {{item.theChoosenOne}}
+          </div>
+          <div class="col-md-2 col-2">
+            <i class="material-icons" (click)="modifySelectedJob(i)" routerLink="edit-job/{{i}}">
+              build
+            </i>
+          </div>
+          <div class="col-md-1 col-2">
+            <i class="material-icons" (click)="deleteJob(i)">
+              delete_outline
+            </i>
+          </div>
+
+        </div>
+
+
+        <pagination-controls class="margin" (pageChange)="p = $event"></pagination-controls>
+      </div>
+      <button class="btn padding cubes text-white" (click)="pushJobToArray()">Add role</button>
+
+    </div>
+
+    <div class="col-md-1 col-1 h-100 cubes">
+
+
+    </div>
+  </div>
+
+
+</div>

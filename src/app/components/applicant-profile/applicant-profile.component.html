@@ -1,0 +1,107 @@
+<div class="container h-90">
+  <div class="row flex-row h-100">
+    <div class="col-md-5 col-12 h-100">
+      <div class="col-12 h-40 ">
+        <div class="col-12 h-15 text-center marg">
+          <h1>{{user.userName}}</h1>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-4">
+            <h2>Name</h2>
+          </div>
+          <div class="col-md-8 col-8">
+            <h3>{{user.firstName}} {{user.lastName}}</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-4 flex">
+            <h2>City</h2>
+          </div>
+          <div class="col-md-8 col-8">
+            {{user.city}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-4 flex">
+            <h2>Role</h2>
+          </div>
+          <div class="col-md-8 col-8">
+            {{user.profiency}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-4 flex">
+            <h2>Socials</h2>
+          </div>
+          <div class="col-md-8 col-8">
+            {{user.profiency}}
+          </div>
+        </div>
+        <div class="row socials">
+          <div class="col-md-3 col-3 text-center">
+            <a href="https://www.facebook.com"><img src="../../../assets/images/facebook.png"></a>
+          </div>
+          <div class="col-md-3 col-3  text-center">
+            <a href="https://www.facebook.com"><img src="../../../assets/images/facebook.png"></a>
+          </div>
+          <div class="col-md-3 col-3  text-center">
+            <a href="https://www.facebook.com"><img src="../../../assets/images/facebook.png"></a>
+          </div>
+          <div class="col-md-3 col-3  text-center">
+            <a href="https://www.facebook.com"><img src="../../../assets/images/facebook.png"></a>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="row h-50">
+        <div class="col-md-12 h-100" [ngStyle]="{ 'background-image': 'url(' + user.image + ')'}">
+          <img src="{{user.image}}" class="align-self-start rounded-circle contain margin">
+        </div>
+      </div>
+      <div class="row marg">
+
+          <div class="btn btn-danger fullwidth text-purple" (click)="backClicked()">Back</div>
+
+      </div>
+    </div>
+
+
+
+    <div class="col-md-7 h-100">
+      <div class="col-12 h-90 ">
+        <div class="col-12 text-center marg">
+          <h1>Introduction</h1>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-12 text-justify">
+            A Lorem Ipsum egy egyszerû szövegrészlete, szövegutánzata a betûszedõ és nyomdaiparnak. A Lorem Ipsum az 1500-as évek óta standard szövegrészletként szolgált az iparban; mikor e  A Lorem Ipsum egy egyszerû szövegrészlete, szövegutánzata a betûszedõ és nyomdaiparnak. A Lorem Ipsum az 1500-as évek óta standard szövegrészletként szolgált az iparban; mikor e  A Lorem Ipsum egy egyszerû szövegrészlete, szövegutánzata a betûszedõ és nyomdaiparnak. A Lorem Ipsum az 1500-as évek óta standard szövegrészletként szolgált az iparban; mikor egy ismeretlen nyomdász összeállította a betûkészletét és egy példa-könyvet vagy szöveget nyomott papírra, ezt használta. Nem csak 5 évszázadot élt túl, de az elektronikus betûkészleteknél is változatlanul megmaradt. Az 1960-as években népszerûsítették a Lorem Ipsum részleteket magukbafoglaló Letraset lapokkal, és legutóbb softwarekkel mint például az Aldus Pagemaker.  A Lorem Ipsum egy egyszerû szövegrészlete, szövegutánzata a betûszedõ és nyomdaiparnak. A Lorem Ipsum az 1500-as évek óta standard szövegrészletként szolgált az iparban; mikor egy ismeretlen nyomdász összeállította a betûkészletét és egy példa-könyvet vagy szöveget nyomott papírra, ezt használta. Nem csak 5 évszázadot élt túl, de az elektronikus betûkészleteknél is változatlanul megmaradt. Az 1960-as években népszerûsítették a Lorem Ipsum részleteket magukbafoglaló Letraset lapokkal, és legutóbb softwarekkel mint például az Aldus Pagemaker.
+          </div>
+        </div>
+        <div class="row">
+        <div class="col-12 padd">
+          <h1>Works</h1>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-md-4 col-4 margbottom" *ngFor="let i of workOne">
+          <a href="{{i.srcUrl}}"><img class="contain " src="{{i.url}}"></a>
+        </div>
+        </div>
+        <div class="row">
+
+        </div>
+
+
+      </div>
+<div class="row padding">
+  <button class="btn btn-danger margin" (click)="hire()">hire</button>
+</div>
+
+    </div>
+
+
+  </div>
+
+
+</div>

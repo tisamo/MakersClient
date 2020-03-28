@@ -1,0 +1,65 @@
+<div class="container-fluid h-100">
+  <div class="row kezdo">
+    <div class="col-md-9 col-sm-6 start">
+    </div>
+    <div class="col-md-3 col-sm-6 " >
+      <div class="row">
+        <div class="col-12 text-center ">
+          <h3 class="purple">Login</h3>
+        </div>
+      </div>
+      <form [formGroup]="loginFormGroup">
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group">
+              <label for="login">Email</label>
+              <input type="text" class="form-control" id="login" formControlName="login" required>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" formControlName="password" required>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <button type="button" class=" align-self-center btn purple" (click)="login()"
+                  [disabled]="loginFormGroup.invalid">Login
+          </button>
+        </div>
+
+        <div class=" text-center login">
+          <button type="button" class=" align-self-center btn purple" (click)="showRegisterForm()">Don't have an
+            Acount?
+          </button>
+        </div>
+      </form>
+
+      <div class="regist" *ngIf="showRegisterFormBool">
+        <div class="row text-center">
+          <div class="col-12 text-center "><h3 class="purple">Register</h3></div>
+        </div>
+
+        <form [formGroup]="registerGroup">
+          <div class="row" *ngFor="let f of formArray">
+            <div class="col-12">
+              <div class="form-group">
+                <label for="{{f.id}}">{{f.name}}</label>
+                <input type="{{f.type}}" class="form-control" id="{{f.id}}" formControlName="{{f.id}}" required>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <button type="button" class=" align-self-center btn purple" (click)="createUser()"
+                    [disabled]="registerGroup.invalid">Register
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row h-100" *ngIf="!exists">
+  </div>
+
+  <div class="row" *ngIf="exists">
+    <div class="col-12 text-center">
+      <h1>Available Roles</h1>
+    </div>
+    <div class="col-md-6 col-12 text-center middle padding" *ngFor="let role of rolesArray;let i = index">
+      <div class="card" style="width: 100%;">
+        <img class="card-img-top" src="{{role.roleImage}}" alt="Card image cap">
+        <div class="card-body text-white">
+          <h5 class="card-title text-white">{{role.role}}</h5>
+          <button  class="btn purple text-white" (click)="apply(i)">Apply</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

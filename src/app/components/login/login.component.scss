@@ -1,0 +1,48 @@
+html, body {
+  height: 100%;
+}
+.purple{
+  color:purple;
+  font-weight: bold;
+}
+.container-fluid {
+
+}
+.img{
+  margin:0 auto;
+  height: 100%;
+  width: 100%;
+}
+.start {
+  background-image: url(../../../assets/images/Makers1.png);
+}
+.register{
+  height: 100% !important;
+
+}
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+}
+
+#sidebar.active {
+  margin-left: -250px;
+}
+.kezdo{
+  height: 100% !important;
+}
+.regist{
+  padding-top:7%;
+}
+.login{
+  margin-top:2%;
+}
+h1{
+  font-size: 8vw;
+  color:white;
+}

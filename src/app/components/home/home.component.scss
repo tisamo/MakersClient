@@ -1,0 +1,46 @@
+.container-fluid {
+
+}
+.row{
+
+}
+
+.card{
+  width:100% !important;
+  background-color:#800000;
+border: none;
+  border-radius: 0;
+
+
+
+}
+.full {
+  width: 100%;
+  position: relative;
+  margin-left: -50vw;
+  left: 50%;
+}
+.img-fluid{
+  max-width: 75%;
+}
+app-profile{
+  width: 100%!important;
+}
+.good{
+  background-image:url("../../../assets/images/redandblackgoodandthebad.png");
+  background-size: contain;
+  overflow: hidden;
+  height: 100%!important;
+
+}
+.bad{
+  background-image:url("../../../assets/images/redandblackgood.png");
+  background-size: contain;
+  overflow: hidden;
+}
+.padd{
+  margin-top:3%;
+}
+.purple{
+  background-image: url('../../../assets/images/purple.jpg');
+}

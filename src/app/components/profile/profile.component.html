@@ -1,0 +1,86 @@
+<div class="container h-100">
+  <div class="row h-25" [ngStyle]="{ 'background-image': 'url(' + header + ')'}">
+    <div class="col-md-3 col-8 h-100 flex">
+      <img class=" align-self-center rounded-circle contain" src="{{image}}">
+    </div>
+    <div class="col-md-6 col-6 h-100  text-white flex">
+      <h2 class="align-self-end">{{myProfile.userName}}</h2>
+    </div>
+  </div>
+  <form [formGroup]="profileForm">
+    <div class="row">
+      <div class=" col-12  text-purple">
+        <h1>Set Profile Settings</h1>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="media">Profile Picture</label>
+          <input type="url" class="form-control" formControlName="media" id="media" url/>
+          <div *ngIf="f.media.errors?.url"> Media must be an url</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="media">Header</label>
+          <input type="url" class="form-control" formControlName="header" id="header" url/>
+          <div *ngIf="f.header.errors?.url"> Media must be an url</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="media">City</label>
+          <input type="url" class="form-control" formControlName="city" id="city" url/>
+          <div *ngIf="f.media.errors?.url"> Media must be an url</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="media">Role</label>
+          <input type="url" class="form-control" formControlName="role" id="role" url/>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="media">Facebook</label>
+          <input type="url" class="form-control" formControlName="facebook" id="facebook" url/>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="twitter">Twitter</label>
+          <input type="url" class="form-control" formControlName="twitter" id="twitter" url/>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="deviantart">Deviantart</label>
+          <input type="url" class="form-control" formControlName="deviantart" id="deviantart" url/>
+          <div *ngIf="f.media.errors?.url"> Media must be an url</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="soundcloud">Soundcloud</label>
+          <input type="url" class="form-control" formControlName="soundcloud" id="soundcloud" url/>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea class="form-control" type="text" id="description"  formControlName="description" rows="10"></textarea>
+          <div *ngIf="f.description.errors?.maxlength">Max length is 500 char</div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="row">
+    <div class="col-12 text-center">
+      <button [disabled]="!profileForm.valid" (click)="setProfile()">Set</button>
+    </div>
+  </div>
+
+
+
+</div>
+

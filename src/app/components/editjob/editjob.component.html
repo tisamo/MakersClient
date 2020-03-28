@@ -1,0 +1,85 @@
+<div class="container-fluid h-100">
+
+  <div class="row h-100">
+
+    <div class="col-md-1 h-100 cubes">
+
+    </div>
+    <div class="col-md-10 h-100 text-center">
+      <div class="col-12">
+
+      </div>
+     <div class="row">
+
+     </div>
+       <form [formGroup]="jobForm">
+         <div class="row padding">
+           <div class="col-8">
+             <div class="col-10 margin ">
+               <div class="form-group ">
+                 <label for="login">Title</label>
+                 <input type="text" class="form-control" id="login" formControlName="title" required>
+               </div>
+             </div>
+             <div class="col-10 margin">
+               <div class="form-group">
+                 <label for="media">Media</label>
+                 <input type="url" class="form-control" formControlName="media" id="media" url/>
+                 <div *ngIf="f.media.errors?.url"> Media must be an url</div>
+               </div>
+             </div>
+             <div class="col-10 margin">
+               <div class="form-group">
+                 <label for="description">Description</label>
+                 <textarea class="form-control" id="description" formControlName="description" rows="10"></textarea>
+               </div>
+             </div>
+           </div>
+           <div class="col-4 text-center font-weight-normal">
+             <h1>Job Editor</h1>
+
+             <div class="row" *ngFor="let r of requirements">
+               <div class="col-6 margin">
+                 <div class="form-group">
+                   <input type="text" class="form-control" id="{{r.name}}" formControlName="{{r.name}}"  url/>
+                   <div *ngIf="f.media.errors?.url"> Media must be an url</div>
+                 </div>
+               </div>
+               <div class="col-6 margin">
+                 <div class="form-group">
+                   <input type="text" class="form-control" id="{{r.value}}" formControlName="{{r.value}}" required>
+                 </div>
+               </div>
+             </div>
+             <button class="btn cubes text-white" (click)="addRequirements()">Add requirement</button>
+             <div class="col-12 text-center">
+               <button class="btn cubes text-white padding-big" (click)="back()">Edit Job</button>
+             </div>
+           </div>
+
+
+         </div>
+
+       </form>
+      <div class="col-8 text-center">
+        <button class="btn cubes text-white padding-big" (click)="editJob()">Edit Job</button>
+      </div>
+           </div>
+
+    <div class="col-md-1 h-100 cubes">
+
+    </div>
+
+         </div>
+
+
+
+
+
+
+  </div>
+
+
+
+
+

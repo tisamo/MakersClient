@@ -1,0 +1,142 @@
+<div class="container-fluid h-100">
+
+  <div class="row h-100">
+
+    <div class="col-md-1 col-1 cubes ">
+
+
+      <i *ngIf="!updating" class="material-icons  text-white padding-big" (click)="back()">
+        arrow_back
+
+
+      </i>
+    </div>
+    <div *ngIf="updating" class="col-md-11 col-11 h-100">
+      <div class="row h-100">
+        <div class="col-md-6 col-6">
+          <div class="row">
+            <div class="col-md-12 col-12">
+              <h3>Create Update</h3>
+            </div>
+          </div>
+
+          <form [formGroup]="updateForm">
+            <div class="row h-100">
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="title">Title</label>
+                  <input type="text" class="form-control" id="title" formControlName="title" required>
+                  <div class="red" *ngIf="f['title'].errors">Must be between 5-20 char</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="header">Header image</label>
+                  <input type="text" class="form-control" id="header" formControlName="media" required url/>
+                  <div class="red" *ngIf="f['media'].errors">Must be an url</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="description">Description</label>
+                  <textarea type="text" class="form-control" id="description" rows="5" formControlName="description"
+                            required></textarea>
+                  <div class="red" *ngIf="f['description'].errors">Min 10 char Max 1000</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="header">Youtube</label>
+                  <input type="text" class="form-control" id="youtube" formControlName="youtube" required url/>
+                  <div class="red" *ngIf="f['youtube'].errors">Must be an url</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="motto">Motto</label>
+                  <input type="text" class="form-control" id="motto" formControlName="motto" required>
+                  <div class="red" *ngIf="f['motto'].errors">Must be atleast 5 char</div>
+                </div>
+              </div>
+              <div class="col-12 text-center">
+                <button [disabled]="!updateForm.valid" class="btn btn-danger" (click)="pushUpdate()">
+                  Create Update
+                </button>
+              </div>
+
+
+            </div>
+
+          </form>
+
+
+        </div>
+
+        <div class="col-md-6 col-6 h-100 cubes">
+          <div class="row h-50 text-white">
+            <div class="col-12 align-self-center text-center ">
+              <div>
+                <h1 class="text-white "><i class="material-icons icons" (click)="checkUpdates()">
+                  cached
+                </i></h1>
+                <h2> Every update</h2>
+              </div>
+
+            </div>
+          </div>
+          <div class="row h-50 text-white">
+            <div class="col-12 text-center ">
+              <div routerLink="/project/{{project.projectName}}">
+                <h1 class="text-white "><i class="material-icons icons">
+                  arrow_back
+                </i></h1>
+                <h2>Back</h2>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+    <div *ngIf="!updating" class="col-md-11 col-11  cubes">
+      <div class="row  h-100" [ngClass]="">
+
+        <div class="col-md-3 col-12  bard " [ngClass]="{'bardsmall':updates.length<5,'bard':updates.length>=5}"
+             *ngFor="let item of updates;let i=index"
+             [ngStyle]="{ 'background-image': 'url(' + item.media + ')'}">
+          <div class="row">
+            <div class="col-8">
+              <h1 class="text-white padding-big ">{{item.title}}</h1>
+            </div>
+            <div class="col-2"><h1 class="text-white ">
+              <i class="material-icons float-right small-icon" (click)="getUpdateItem(i)" routerLink="edit/{{i}}">
+              build
+            </i></h1></div>
+            <div class="col-2"><h1 class="text-white "><i class="material-icons float-right  small-icon"
+                                                          (click)="deleteUpdateItem(i)">
+              delete
+            </i></h1></div>
+          </div>
+          <div>
+
+
+            <div>
+
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+      <div class="row padding-big">
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

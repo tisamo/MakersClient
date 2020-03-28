@@ -1,0 +1,99 @@
+<div [@fade] [@slideInOut] class="row h-100">
+  <div class="col-12 text-center ">
+    <div [hidden]="poly" class="row h-100 ">
+      <div class="col-md-6 col-12  start text-center flex" (click)="pickHire()">
+        <div class="align-self-center align-self-end margin">
+          <img src="https://img.icons8.com/nolan/256/folder-invoices.png">
+          <h3>Your Projects</h3>
+        </div>
+
+      </div>
+
+      <div class="col-md-6 col-12  start flex text-center" routerLink="/projects" >
+        <div class="align-self-center align-self-end margin">
+          <img src="https://img.icons8.com/nolan/256/search.png">
+          <h3>Look for Project</h3>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div *ngIf="hireTime" class="poly h-100">
+      <div class="row h-100 flex ">
+        <div  class="col-md-8 col-12 ">
+          <div class="row ">
+            <div class="col-sm-3 project"[@fade] *ngFor="let p of projects;let i = index" (click)="getProjectName(i)"  routerLink="/project/{{p.projectName}}"  >
+              <div class="card">
+                <img class="card-img-top" src="{{p.media}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{p.projectName}}</h5>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="row text-white button col-12">
+            <button class="btn btn-danger" (click)="backout()">Back</button>
+          </div>
+
+        </div>
+        <div class="col-md-4 col-12 h-100 askbox text-white text-center align-items-center">
+          <div [@fade] >
+            <form  [formGroup]="hireFrom">
+            <div class="row">
+              <h3 style="padding-bottom:5%;padding-top:2%">Add new project</h3>
+              <div class="col-12">
+                <div class="form-group text-white">
+                  <label for="login">Project Name</label>
+                  <input type="text" class="form-control" id="login" formControlName="projectName" required>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="image">Image</label>
+                  <input type="text" class="form-control" value="https://p1.akcdn.net/mid/199681587.lava-trendy-labos-18cm-1-7l-fedo.jpg" id="image" formControlName="media" required url/>
+                  <div *ngIf="f.media.errors?.url"><p style="color:red">Must be an url</p></div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="sel1">Category</label>
+                  <select class="form-control" formControlName="category" id="sel1">
+                    <option>Game developing</option>
+                    <option>Inventing</option>
+                    <option>Architecture</option>
+                    <option>Art</option>
+                    <option>Music making</option>
+                    <option>Pure fun</option>
+                    <option>Whatever</option>
+                    <option>other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="description">Description</label>
+                  <textarea class="form-control" id="description" formControlName="description" rows="4"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="text-center text-white">
+              <button type="submit" [disabled]="!hireFrom.valid" class=" align-self-center text-white btn" (click)="sendProject()">Save
+              </button>
+            </div>
+            </form>
+
+        </div>
+      </div>
+    </div>
+    <div class="poly" [@fade] [@slideInOut]>
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+

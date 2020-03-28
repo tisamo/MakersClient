@@ -1,0 +1,15 @@
+<div class="container-fluid h-100">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h1>Roles</h1>
+    </div>
+  </div>
+  <div class="row align-items-center h-100" [ngClass]="{'h-100':windowWidth<= 767,'h-25':windowWidth>768}" >
+    <div class="col-md-2 align-self-center col-8  text-white applicants"
+         [ngClass]="{'h-50 margin':windowWidth<= 767,'h-30':windowWidth>768}" *ngFor="let j of roles;let i = index"
+         [ngStyle]="{'background-image': 'url(' + j.roleImage + ')'}" (click)="getRole(i)"
+         routerLink="applicants/{{j.role}}">
+      <h2 class="">{{j.role}}</h2>
+    </div>
+  </div>
+</div>

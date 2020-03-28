@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center littlepadd">
+      <h1 class="font-weight-italic">Applicants for {{role.role}} role</h1>
+    </div>
+  </div>
+  <div class="row h-100 text-center padd">
+    <div class="col-md-4 h-25 col-12 " *ngFor="let user of users;let i = index" >
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{user.image}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{user.userName}}</h5>
+          <a (click)="getApplicantProfile(i)" routerLink="applicant-profile/{{user.userName}}" class="btn btn-primary">View Profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,61 @@
+.row {
+  width: auto;
+
+  margin: 0 auto;
+}
+
+.start {
+  height: 100% !important;
+  width: auto;
+  overflow: hidden;
+
+}
+.card-img-top{
+  width:100%;
+  height:auto;
+}
+.button{
+  padding-top:2%;
+}
+
+.to-center {
+padding-top:40%;
+  width: 50%;
+}
+
+.poly {
+
+  background-size: cover;
+  height: 100% !important;
+  overflow: hidden;;
+  margin: 0 auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+
+}
+.btn-danger {
+  color: #fff;
+  background-color: rebeccapurple;
+  border-color: rebeccapurple;
+}
+
+.askbox {
+  height: 100%;
+  background-image: url('../../../assets/images/purple.jpg');
+
+}
+.project{
+  padding-top:3%;
+}
+.flex{
+  display: flex;
+}
+.margin{
+  margin:0 auto;
+  padding-bottom:10%;
+}
+.bottom{
+  display: inline-block;
+  align-self: flex-end;
+}

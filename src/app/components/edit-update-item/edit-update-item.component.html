@@ -1,0 +1,84 @@
+<div class="container-fluid h-100">
+
+  <div class="row h-100">
+
+    <div class="col-md-1 col-1 cubes ">
+
+
+
+
+    </div>
+    <div  class="col-md-11 col-11 h-100">
+      <div class="row h-100">
+        <div class="col-md-5 col-5">
+          <div class="row">
+            <div class="col-md-12 col-12">
+              <h3>Edit Update</h3>
+            </div>
+          </div>
+
+          <form [formGroup]="updateForm">
+            <div class="row h-100">
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="title">Title</label>
+                  <input type="text" class="form-control" id="title" formControlName="title" required>
+                  <div class="red" *ngIf="f['title'].errors">Must be between 5-20 char</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="header">Header image</label>
+                  <input type="text" class="form-control" id="header" formControlName="media" required url/>
+                  <div class="red" *ngIf="f['media'].errors">Must be an url</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="description">Description</label>
+                  <textarea type="text" class="form-control" id="description" rows="5" formControlName="description"
+                            required></textarea>
+                  <div class="red" *ngIf="f['description'].errors">Min 10 char Max 1000</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="header">Youtube</label>
+                  <input type="text" class="form-control" id="youtube" formControlName="youtube" required url/>
+                  <div class="red" *ngIf="f['youtube'].errors">Must be an url</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="motto">Motto</label>
+                  <input type="text" class="form-control" id="motto" formControlName="motto" required>
+                  <div class="red" *ngIf="f['motto'].errors">Must be atleast 5 char</div>
+                </div>
+              </div>
+              <div class="col-12 text-center">
+                <button [disabled]="!updateForm.valid" class="btn btn-danger" (click)="editItem()">
+                  Edit
+                </button>
+              </div>
+
+
+            </div>
+
+          </form>
+
+
+        </div>
+
+        <div class="col-md-7 col-7 h-100 cubes">
+
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+</div>
+</div>
